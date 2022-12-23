@@ -3,13 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Task</title>
+   <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-    <p>Task:</p><br>
-    <form action="{{url_for('edit')}}" method="POST">
-        <input hidden="hidden" name="id" value="{{task.id}}">
-        <input id="task"  name="task" type="text">
-        <button type="submit">Change Task</button>
-    </form>
+    <header id="main-header" class="main-header">
+        <nav class="nav-bar">
+            <ul>
+              <li class="nav-link--brand-link" id="brand-link"><a href="#home">KR</a></li>
+              <li class="nav-link--title" id="title"><a href="{{url_for('home')}}">To-Do List</a></li>
+              <li class="nav-link"><a href="#projects">More Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container_main--edit">
+        <h3 class="title">Edit</h3>
+        <form action="{{url_for('edit')}}" method="POST">
+            <input hidden="hidden" name="id" value="{{task.id}}">
+            <input id="task"  name="task" type="text">
+            <button class="btn" id="btn_submit" type="submit">Change</button>
+        </form>
+
+    </section>
+
 </body>
 </html>
