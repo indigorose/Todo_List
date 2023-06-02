@@ -9,38 +9,36 @@
     <title>Item Lister</title>
 </head>
 <body>
-    <header id="main-header" class="main-header">
-        <nav class="nav-bar">
-            <ul>
-              <li class="nav-link--brand-link" id="brand-link"><a href="#home">KR</a></li>
-              <li class="nav-link--title" id="title"><a href="{{url_for('home')}}">To-Do List</a></li>
-              <li class="nav-link"><a href="#projects">More Projects</a></li>
+    <header id="navbar" class="navbar">
+        <nav class="nav">
+            <ul class="nav__list row">
+              <li class="nav__item" id="logo"><a class="logo" href="#home">KR</a></li>
+              <li class="nav__item" id="title"><a class="nav__link" href="{{url_for('home')}}">To-Do List</a></li>
             </ul>
         </nav>
     </header>
-    <main class="container-main">
-        <section class="container-list">
-            <h2 class="container-title">Items</h2>
-            <div class="list-items">
-                {% if not list_tasks %}
-                    <p class="list-items--missing">No tasks</p>
-                {% endif %}
-                <ul>
-                    {% for task in list_tasks %}
-                        <li class="list-items--item">
-                            <p class="item">{{ task.task}}</p>
-                            <a class="btn" id="btn_edit" href="{{url_for('edit', id=task.id) }}">Edit</a>
-                            <a class="btn" id="btn_del" href="{{url_for('delete_task', id=task.id)}}">Delete</a>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </section>
-           <div class="container-add">
-               <h3 class="container-title">Add Items</h3>
-               <a class="btn" id="btn_add" href="{{url_for('add')}}">Add</a>
-           </div>
-    </main>
+    <section class="container-list">
+        <h2 class="container-title">Items</h2>
+        <div class="list-items">
+            {% if not list_tasks %}
+                <p class="list-items--missing">No tasks</p>
+            {% endif %}
+            <ul>
+                {% for task in list_tasks %}
+                    <li class="list-items--item">
+                        <p class="item">{{ task.task}}</p>
+                        <a class="btn" id="btn_edit" href="{{url_for('edit', id=task.id) }}">Edit</a>
+                        <a class="btn" id="btn_del" href="{{url_for('delete_task', id=task.id)}}">Delete</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+       <div class="container-add">
+           <h3 class="container-title">Add Items</h3>
+           <a class="btn" id="btn_add" href="{{url_for('add')}}">Add</a>
+       </div>
+    </section>
+
 
 </body>
 </html>
