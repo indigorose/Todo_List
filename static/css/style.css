@@ -9,6 +9,7 @@
 :root {
   --text-color-1: black;
   --text-color-2: white;
+  --text-color-3: rgb(105, 105, 105);
   --main-1: rgb(255, 225, 98);
   --main-2: rgb(255, 100, 100);
   --main-3: rgb(145, 196, 131);
@@ -17,6 +18,7 @@
 }
 
 }
+
 body {
     margin:0;
     font-family: 'Montserrat','Outfit', sans-serif;
@@ -39,7 +41,6 @@ h5,
 h6 {
 	font-family: 'Outfit', sans-serif;
 	font-weight: 900;
-	font-size: 1.5rem;
 }
 
 p {
@@ -47,6 +48,9 @@ p {
 	font-weight: 300;
 }
 
+ul {
+    padding-left: 0;
+}
 
 /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
 
@@ -55,24 +59,40 @@ p {
 .row {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .col {
     display: flex;
     flex-direction: column;
+    gap: 1em;
 }
 
 .container {
+    border: 1px solid rgb(222, 222, 222);
     width: 80%;
     max-width: 600px;
     margin: 0 auto;
+    top: 5em;
+    padding-bottom: 2em;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.1);
 }
-
+.container__title {
+    font-size: 2rem;
+    padding: 0.5em 1em;
+    margin: 0;
+}
 .btn {
-    border: 1px solid red;
-    padding: 0.25em 0.75em;
+    font-family: 'Montserrat', sans-serif;
+    max-width: fit-content;
+	border: 1px solid rgb(154, 154, 154);
+	padding: 0.25em 0.75em;
+	color: var(--text-color-1);
+	text-align: center;
+	font-weight: 400;
 }
 
 /* Mobile First */
@@ -123,8 +143,102 @@ p {
 /* To-Do cards */
 .container-list {
     padding-top: 5em;
-    border: 1px solid black;
 }
 
-/* Card */
-.
+.card__navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.list__item {
+    border: 1px solid rgb(222, 222, 222);
+    margin: 0 auto;
+    width: 50%;
+    padding: 1em;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.missing {
+    font-weight: 700;
+    color: var(--main-2);
+}
+
+.active {
+    color: var(--text-color-1);
+    width: 70%;
+    margin-bottom: 2em;
+}
+
+.item{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 600;
+    margin: 0;
+    padding: 0.8em;
+}
+
+.btn__container {
+    width: fit-content;
+    margin: 0 auto;
+}
+.btn + .btn {
+    margin-left: 1em;
+}
+
+#btn_edit {
+    font-size: 1.2rem;
+    background-color: var(--main-1);
+}
+
+#btn_del, #btn__cancel {
+    font-size: 1.2rem;
+    background-color: var(--main-2);
+    color: var(--text-color-2);
+}
+
+#btn__cancel {
+    margin-right: 1em;
+}
+
+#btn_add {
+    margin: 0 auto;
+    background-color: var(--main-3);
+    color: var(--text-color-2);
+    font-size: 1.2rem;
+}
+
+/* Add task page styling */
+
+.task__form {
+    font-size: 1.5rem;
+}
+
+.task__title {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5em 0 0.5em 1em;
+}
+
+.task__input {
+    width: 60%;
+    padding: 0.5em;
+    font-size: 1.5rem;
+}
+
+#btn__submit {
+    margin: 0 1em;
+    padding: 0.25em 0.75em;
+    font-size: 1.5rem;
+    background-color: var(--main-3);
+    color: var(--text-color-2);
+}
+
+.edit {
+    margin-left: 2em;
+}
+

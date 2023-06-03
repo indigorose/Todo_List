@@ -6,21 +6,24 @@
    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
-    <header id="main-header" class="main-header">
-        <nav class="nav-bar">
-            <ul>
-              <li class="nav-link--brand-link" id="brand-link"><a href="#home">KR</a></li>
-              <li class="nav-link--title" id="title"><a href="{{url_for('home')}}">To-Do List</a></li>
-              <li class="nav-link"><a href="#projects">More Projects</a></li>
+<!-- Navbar-->
+    <header id="navbar" class="navbar">
+        <nav class="nav">
+            <ul class="nav__list row">
+              <li class="nav__item" id="logo"><a class="logo" href="#home">KR</a></li>
+              <li class="nav__item" id="title"><a class="nav__link" href="{{url_for('home')}}">To-Do List</a></li>
             </ul>
         </nav>
     </header>
-    <section class="container_main--edit">
-        <h3 class="title">Edit</h3>
-        <form action="{{url_for('edit')}}" method="POST">
+    <section class="container container__main col">
+        <div class="card__navbar">
+            <h3 class="container__title">Edit</h3>
+            <a class="btn" id="btn__cancel" href="{{url_for('home')}}">Cancel</a>
+        </div>
+        <form action="{{url_for('edit')}}" method="POST" class="row task__form">
             <input hidden="hidden" name="id" value="{{task.id}}">
-            <input id="task"  name="task" type="text">
-            <button class="btn" id="btn_submit" type="submit">Change</button>
+            <input id="task"  name="task" type="text" class="task__input edit">
+            <button class="btn" id="btn__submit" type="submit">Change</button>
         </form>
 
     </section>
