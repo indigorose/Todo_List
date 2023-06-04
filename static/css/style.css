@@ -26,6 +26,10 @@ body {
     border: none;
 }
 
+section {
+    padding-bottom: 2em;
+}
+
 ul{ list-style-type: none;}
 a { text-decoration: none;}
 a:link { text-decoration: none; }
@@ -85,6 +89,19 @@ ul {
     padding: 0.5em 1em;
     margin: 0;
 }
+/* Add/Edit Container */
+.container__main {
+    border: 1px solid rgb(222, 222, 222);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    top: 5em;
+    padding-bottom: 2em;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.1);
+}
+
 .btn {
     font-family: 'Montserrat', sans-serif;
     max-width: fit-content;
@@ -100,7 +117,6 @@ ul {
 /* Navbar */
 
 .navbar {
-	padding-bottom: 1em;
 	text-align: center;
 	z-index: 999;
     top:0;
@@ -111,29 +127,23 @@ ul {
 }
 
 .nav__list {
-	padding: 0;
-	display: inline-flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 1em;
 	align-items: center;
-	list-style: none;
+	padding: 0 1.5em;
+	font-size: 1rem;
 }
 
 .nav__item {
-	padding-top: 0.5em;
 	/* border: 1px solid white; */
 	font-family: 'Montserrat', serif;
 	text-transform: uppercase;
-}
-
-.nav__item + .nav__item {
-	margin-left: 3em;
+	font-size: 1.5rem;
+	vertical-align: middle;
 }
 
 .logo {
 	font-family: 'Outfit', sans-serif;
 	font-weight: 900;
+	color: var(--text-color-2);
 }
 
 .nav__link {
@@ -170,6 +180,7 @@ ul {
 }
 
 .active {
+    background-color: rgb(250, 250, 250);
     color: var(--text-color-1);
     width: 70%;
     margin-bottom: 2em;
@@ -242,3 +253,73 @@ ul {
     margin-left: 2em;
 }
 
+@media (max-width: 450px) {
+    .container__title {
+        font-size: 1.5rem;
+    }
+    .item {
+        font-size: 1.2rem;
+    }
+    .row{
+        flex-direction: column;
+        gap: 0.5em;
+    }
+    .btn__container {
+        max-width: 80%;
+    }
+    .btn + .btn {
+        margin-left: 0;
+    }
+
+    #btn_del, #btn_edit{
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+}
+
+
+
+@media (min-width: 750px) {
+    .container {
+        max-width: 1200px;
+    }
+
+    .container-list > .container-add {
+        width: 600px;
+    }
+
+    .container-add > .container__title {
+        text-align: center;
+    }
+
+    .wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    ul > li {
+       max-width: 45%;
+       margin-right: 1em;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1800px;
+    }
+
+    .wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+     }
+
+     ul > li {
+        max-width: 27%;
+        margin-right: 1em;
+     }
+
+}

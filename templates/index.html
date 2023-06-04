@@ -20,13 +20,13 @@
 <!--Main Section-->
     <section class="container-list col">
         <div class="container col">
-            <h3e class="container__title">Items</h3e>
+            <h3 class="container__title">Items</h3>
 <!--            If the python file cannot detect any tasks, display no tasks-->
             <div class="list__items">
                 {% if not list_tasks %}
                 <p class="list__item list__item missing">No Tasks</p>
                 {% endif %}
-                <ul>
+                <ul class="wrap">
                     {% for task in list_tasks %}
                     <li class="list__item active">
                         <p class="item">{{ task.task}}</p>
